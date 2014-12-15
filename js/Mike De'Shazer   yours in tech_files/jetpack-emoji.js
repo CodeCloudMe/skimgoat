@@ -1,0 +1,2 @@
+var JetpackEmoji={EMOJI_SIZE:72,BASE_URL:'//s0.wp.com/wp-content/mu-plugins/emoji/twemoji/',parse:function(element,size,base_url){twemoji.parse(element,{size:size||this.EMOJI_SIZE,base:base_url||this.BASE_URL,callback:function(icon,options,variant){switch(icon){case'a9':case'ae':case'2122':case'2194':case'2660':case'2663':case'2665':case'2666':return false;}
+return''.concat(options.base,options.size,'/',icon,options.ext);}});}}

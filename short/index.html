@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="keywords" content="skimgoat, link shortener, url shortener, get paid to shorten links" />
+	<meta name="description" content="SkimGoat - Link Shortener">
+	<meta name="author" content="themeenergy.com">
+	
+	<title>SkimGoat - Link Shortener</title>
+	
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link href="http://fonts.googleapis.com/css?family=Raleway:400,300,500,600,700,800" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body class="home">
+	<!--header-->
+	<header class="head" role="banner" style="display:none">
+		<!--wrap-->
+		<div class="wrap clearfix">
+			<a href="index.html" title="SkimGoat" class="logo"><img src="images/ico/logo.png" alt="SkimGoat Logo" /></a>
+			
+			
+			
+			
+		</div>
+		<!--//wrap-->
+	</header>
+	<!--//header-->
+		
+	<!--main-->
+	<main class="main" role="main">
+		<!--intro-->
+		<div class="intro">
+			<figure class="bg"><img src="images/intro.jpg" alt="" /></figure>
+			
+			<!--wrap-->
+			<div class="wrap clearfix">
+				<!--row-->
+				<div class="row">
+					<article class="three-fourth text wow zoomIn" data-wow-delay=".2s">
+						<h1>Welcome to SkimShort!</h1>
+						<p>SkimShort is <a href="http://skimgoat.com" target="_blank">SkimGoat</a>'s URL shortener. </strong>This is an invitation-only program. Every time you shorten a link and share it to your twitter account, you earn 50¢. For every 10 retweets, you earn $1!</p>
+						Currently, we have a $3.50 per day per user limit, so you can earn as much as $100/month tweeting. All pay-outs are at the end of the month in Bitcoin, directly to your Twitter account!</p><p>SkimGoat is all about showing multiple perspectives. You can help us provide a better service by categorizing your content into its appropriate "SkimGoat Angle". </p>
+						<a href="mailto:m@alinapi.com" class="button white more medium">We welcome your feedback</a>
+						<p>We always want to hear from you! </p>
+					</article>
+					
+					<!--search recipes widget-->
+					<div class="one-fourth wow fadeInDown" data-wow-delay=".5s">
+						<div class="widget container">
+							<div class="textwrap">
+								<h3>Shorten URL</h3>
+								
+							</div>
+							<form action="javascript:createLink()">
+
+								
+
+
+								<div class="f-row" >
+									<input type="text" id="fullUrl" placeholder="Full Link URL" />
+								</div>
+								<div class="f-row">
+									<select id="category">
+										<option>Angle</option>
+										<option>US- Left</option>
+										<option>US- Right</option>
+										<option>Korea- Conservative</option>
+										<option>Korea- Liberal</option>
+										<option>Asia</option>
+										<option>Russia</option>
+										<option>Latin America</option>
+										<option>Euro</option>
+										<option>Africa</option>
+										<option>Middle East</option>
+									</select>
+								</div>
+
+								<div class="f-row" id="hiddenLink" style="display:none">
+									<input type="text" placeholder="Your shortened URL" />
+								</div>
+
+
+								<div class="f-row bwrap">
+									<input type="submit" id = "ssBut" value="Shorten & Share" />
+								</div>
+
+								<div class="f-row bwrap" id="tweetHide" style="display:none">
+									
+									<a id="tweetBut" href="http://twitter.com/intent/tweet?text=%20%23hashtag&amp;via=SkimGoat"
+    onclick="return !window.open(this.href, 'tweet', 'menubar=no')">
+    <input type="button" id = "ssBut1" value="Tweet" /></a>
+								</div>
+
+
+							</form>
+						</div>
+					</div>
+					<!--//search recipes widget-->
+				</div>
+				<!--//row-->
+			</div>
+			<!--//wrap-->
+		</div>
+		<!--//intro-->
+		
+	
+		
+	</main>
+	<!--//main-->
+	
+	<!--call to action-->
+	
+	<!--//call to action-->
+	
+	<!--footer-->
+	
+	<!--//footer-->
+	
+	<!--preloader-->
+	<div class="preloader">
+		<div class="spinner"></div>
+	</div>
+	<!--//preloader-->
+	
+	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/jquery.uniform.min.js"></script>
+	<script src="js/wow.min.js"></script>
+	<script src="js/jquery.slicknav.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		window.dynamicNumbersBound = false;
+		var wow = new WOW();
+		WOW.prototype.show = function(box) {
+			wow.applyStyle(box);
+			if (typeof box.parentNode !== 'undefined' && hasClass(box.parentNode, 'dynamic-numbers') && !window.dynamicNumbersBound) {
+				bindDynamicNumbers();
+				window.dynamicNumbersBound = true;
+			}
+			return box.className = "" + box.className + " " + wow.config.animateClass;
+		};
+		wow.init();
+		
+		function hasClass(element, cls) {
+			return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+		}
+		
+		function bindDynamicNumbers() {
+			$('.dynamic-number').each(function() {				
+				var startNumber = $(this).text();
+				var endNumber = $(this).data('dnumber');
+				var dynamicNumberControl = $(this);
+				
+				$({numberValue: startNumber}).animate({numberValue: endNumber}, {
+					duration: 4000,
+					easing: 'swing',
+					step: function() { 
+						$(dynamicNumberControl).text(Math.ceil(this.numberValue)); 
+					}
+				});
+			});	
+		}
+
+		function createLink(){
+
+
+			var url = $('#fullUrl').val();
+			var category = $('#category').val();
+			if(category==null){
+
+				category= "Not Set";
+			}
+
+			if(window.location.href.indexOf('=')!=-1){
+				var requester = window.location.href.split('=')[1];
+			}
+
+			else{
+				var requester = 'guest';
+			
+			}
+
+			if(url==null || url =="" ){
+				alert("Please add a URL to shorten... a URL. \nWait. Really? You shortened a nothing? \nYou can do this. We believe in you. Try again. But think it through. \n Much love,\n \n SkimGoat Team WHOOP!");
+				return;
+			}
+
+			if(url.indexOf('http')==-1){
+
+				alert("Please submit a valid link. (Hint: Make sure you have http:// in front of it.)");
+				return;
+			}
+			if(url.length < 6){
+
+				alert("Please send a valid URL");
+				return;
+			}
+
+
+			$('#ssBut').val('shortening...');
+
+
+
+
+
+			
+
+
+			$.ajax({
+				'url':'/cloud/models/news/shorten.php',
+				'data':{'url':url,
+						'requester':requester,
+						'category':category},
+
+				complete:function(transport){
+
+					res= $.parseJSON(transport.responseText);
+
+					shortLink = res['url'];
+					shortTitle = res['title'];
+					 ourUrl = "http://skgt.co/i/?s="+shortLink;
+					$('#hiddenLink input').val("http://skgt.co/i/?s="+shortLink);
+					$('#hiddenLink').show('slow');
+					triggerTwitter(ourUrl, shortTitle);
+					
+
+
+					
+
+					$('#ssBut').val('success!');
+
+					setTimeout(function(){
+
+						$('#ssBut').val('shorten & share');
+					}, 10000);
+
+
+
+				}
+			})
+		}
+
+
+
+		function triggerTwitter(tUrl, sTitle){
+
+		//return !window.open("http://twitter.com/intent/tweet?text="+encodeURIComponent(sTitle)+"%20"+tUrl+"%20via @SkimGoat", 'tweet', 'menubar=no')
+		$('#tweetHide').show('slow');
+
+		$('#tweetBut').attr('href', "http://twitter.com/intent/tweet?text="+encodeURIComponent(sTitle)+"%20"+tUrl+"%20via @SkimGoat" );
+		}
+
+
+		
+	</script>
+	<div id="hide" style="display:hidden">
+	<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://skimgoat.com" data-hashtags="skimgoat">Tweet</a>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+
+	</div>
+</body>
+</html>
+
+
