@@ -10,7 +10,7 @@ All of the settings for your database credentials should be set in /cloud/models
 
 The database dump is locationed at /skimgoatDump.sql to get your database tables and structure all setup
 
-You can add sources to the database by specifying the domain and catagory in domains table. All the rules for how to parse articles from the page should be set in articlesParse table, refering the domain by the rId in domains table
+You can add sources to the database by specifying the domain and catagory in `domains` table. All the rules for how to parse articles from the page should be set in `articlesParse` table, referencing the domain by the rId in the `domains` table
 
 
 Better documentation coming soon.
